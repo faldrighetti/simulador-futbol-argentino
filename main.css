@@ -1,0 +1,25 @@
+.intro{
+    text-align: center;
+}
+
+.potencia{
+    background-color: gold;
+}
+
+.superior{
+    background-color: green;
+    color: white;
+}
+
+.normal{
+    background-color: orange;
+}
+
+.inferior{
+    background-color: orangered;
+    color: white;
+}
+
+.oculto{
+    display: none;
+}
