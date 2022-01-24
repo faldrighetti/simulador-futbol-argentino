@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Simulador</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <h2>Simulador de resultados del fútbol argentino</h2>
+
+    <div id="local">
+        <form id="equipo-1">
+            <p>Elegí el equipo local </p>
+                <select name="equipo">
+                    <div id='lista-de-locales'>
+                    <option value="">Selecciona...</option>
+                    <option value="River" class="potencia">River Plate</option>
+                    <option value="Boca" class="potencia">Boca Juniors</option>
+                    <option value="Independiente" class="superior">Independiente</option>
+                    <option value="Racing" class="superior">Racing</option>
+                    <option value="San Lorenzo" class="superior">San Lorenzo</option>
+                    <option value="Colón" class="superior">Colón</option>
+                    <option value="Defensa y Justicia" class="superior">Defensa y Justicia</option>
+                    <option value="Estudiantes" class="superior">Estudiantes LP</option>
+                    <option value="Lanús" class="superior">Lanús</option>
+                    <option value="Talleres" class="superior">Talleres</option>
+                    <option value="Vélez" class="superior">Vélez</option>
+                    <option value="Argentinos" class="normal">Argentinos Juniors</option>
+                    <option value="Arsenal" class="normal">Arsenal</option>
+                    <option value="Atlético Tucumán" class="normal">Atlético Tucumán</option>
+                    <option value="Banfield" class="normal">Banfield</option>
+                    <option value="Gimnasia" class="normal">Gimnasia LP</option>
+                    <option value="Godoy Cruz" class="normal">Godoy Cruz</option>
+                    <option value="Huracán" class="normal">Huracán</option>
+                    <option value="Newell's" class="normal">Newell's</option>
+                    <option value="Rosario Central" class="normal">Rosario Central</option>
+                    <option value="Unión" class="normal">Unión</option>
+                    <option value="Aldosivi" class="inferior">Aldosivi</option>
+                    <option value="Barracas Central" class="inferior">Barracas Central</option>
+                    <option value="Central Córdoba" class="inferior">Central Córdoba</option>
+                    <option value="Patronato" class="inferior">Patronato</option>
+                    <option value="Platense" class="inferior">Platense</option>
+                    <option value="Sarmiento" class="inferior">Sarmiento</option>
+                    <option value="Tigre" class="inferior">Tigre</option>
+                </div>
+                </select>
+                <br>
+                <br>
+        <button id="boton-seleccionar-local">Elegir equipo local</button>
+            </p>
+        </form>
+    </div>
+
+    <div id="visitante" class="oculto">
+    <form id="equipo-2">
+    <p>Elegí el equipo visitante </p>
+        <select name="equipo">
+            <div id= lista-de-visitantes>
+            <option value="">Selecciona...</option>
+            <option value="River" class="potencia">River Plate</option>
+            <option value="Boca" class="potencia">Boca Juniors</option>
+            <option value="Independiente" class="superior">Independiente</option>
+            <option value="Racing" class="superior">Racing</option>
+            <option value="San Lorenzo" class="superior">San Lorenzo</option>
+            <option value="Colón" class="superior">Colón</option>
+            <option value="Defensa y Justicia" class="superior">Defensa y Justicia</option>
+            <option value="Estudiantes" class="superior">Estudiantes LP</option>
+            <option value="Lanús" class="superior">Lanús</option>
+            <option value="Talleres" class="superior">Talleres</option>
+            <option value="Vélez" class="superior">Vélez</option>
+            <option value="Argentinos" class="normal">Argentinos Juniors</option>
+            <option value="Arsenal" class="normal">Arsenal</option>
+            <option value="Atlético Tucumán" class="normal">Atlético Tucumán</option>
+            <option value="Banfield" class="normal">Banfield</option>
+            <option value="Gimnasia" class="normal">Gimnasia LP</option>
+            <option value="Godoy Cruz" class="normal">Godoy Cruz</option>
+            <option value="Huracán" class="normal">Huracán</option>
+            <option value="Newell's" class="normal">Newell's</option>
+            <option value="Rosario Central" class="normal">Rosario Central</option>
+            <option value="Unión" class="normal">Unión</option>
+            <option value="Aldosivi" class="inferior">Aldosivi</option>
+            <option value="Barracas Central" class="inferior">Barracas Central</option>
+            <option value="Central Córdoba" class="inferior">Central Córdoba</option>
+            <option value="Patronato" class="inferior">Patronato</option>
+            <option value="Platense" class="inferior">Platense</option>
+            <option value="Sarmiento" class="inferior">Sarmiento</option>
+            <option value="Tigre" class="inferior">Tigre</option>
+            </div>
+        </select>
+    </p>
+    <button id="boton-seleccionar-visitante">Elegir equipo visitante</button>
+    </div>
+    </form>
+    <br>
+    <br>
+    <button id="boton-jugar-partido" class="oculto">Jugar!</button>
+    <button id ="resetear" class="oculto">Resetear</button>
+    <p id="resultado"></p>
+
+    <script src='simulador.js'></script>
+    <script src='interfaz.js'></script>
+    <script src='pruebas.js'></script>
+</body>
+</html>
