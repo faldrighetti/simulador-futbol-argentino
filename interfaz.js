@@ -8,19 +8,21 @@ const infoVisitante = document.querySelector('#visitante')
 
 const $botonResetear = document.querySelector('#resetear')
 
-const listaDeVisitantes = []
+const gallinas = document.querySelector('#gallinas').value //Le puse un id gallinas a River para probar
 
+console.log(gallinas) //Esto da river
+
+const listaDeVisitantes = []
 for (let i = 0; i < $formEquipo1.equipo.length; i++){
     if ($formEquipo1.equipo[i].value){
     listaDeVisitantes.push($formEquipo1.equipo[i].value)}
 }
-
 console.log(listaDeVisitantes)
 
 function borrarEquipo(){
     for (let i = 0; i < listaDeVisitantes.length; i++){
-        if (listaDeVisitantes[i] === equipoSeleccionado1){
-            listaDeVisitantes.pop(listaDeVisitantes[i])
+        if (listaDeVisitantes[i] === $formEquipo1.equipo.value){
+            listaDeVisitantes.filter(listaDeVisitantes[i].value)
         }
     }
 }
@@ -29,7 +31,7 @@ $botonElegirLocal.onclick = function(){
     equipo1.equipo = $formEquipo1.equipo.value
     equipoSeleccionado1 = equipo1.equipo
     infoVisitante.className = ''
-    borrarEquipo()
+    //borrarEquipo()
     return false;
 }
 
