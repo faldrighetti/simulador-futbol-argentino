@@ -123,3 +123,4 @@ function jugar(){
 //5- Pruebas, que mandar a jugar sin elegir club dé error. O mejor, que se marque en rojo el campo si no se eligió nada.
 //6- Que cuando se elija un local, se elimine de la lista de visitantes. Impedir un River vs River.
 //7- Hacer un CSS bonito.
+//8- Agregar div al elegir el equipo. Por ejemplo: "Local: River", y abajo "Visitante: Boca" ya antes de cliquear Jugar

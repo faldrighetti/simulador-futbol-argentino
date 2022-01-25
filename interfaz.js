@@ -12,6 +12,8 @@ const gallinas = document.querySelector('#gallinas').value //Le puse un id galli
 
 console.log(gallinas) //Esto da river
 
+//Podría probar con darles id a los equipos y así intentar acceder al classname
+
 const listaDeVisitantes = []
 for (let i = 0; i < $formEquipo1.equipo.length; i++){
     if ($formEquipo1.equipo[i].value){
