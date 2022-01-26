@@ -21,7 +21,6 @@ $botonElegirLocal.onclick = function(){
     equipoSeleccionado1 = equipo1.equipo
     infoVisitante.className = ''
     crearVisitantes()
-    $botonResetear.className = ''
     
     return false;
 }
@@ -63,12 +62,13 @@ function crearVisitantes(){
 $botonElegirVisitante.onclick = function(){
     equipo2.equipo = $formEquipo2.equipo.value
     equipoSeleccionado2 = equipo2.equipo
-    $botonJugar.className = ''
+    $botonJugar.className = 'jugar'
     return false;
 }
 
 $botonJugar.onclick = function(){
     jugar()
+    $botonResetear.className = 'resetear'
     return false;
 }
 
