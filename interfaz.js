@@ -8,33 +8,27 @@ const infoVisitante = document.querySelector('#visitante')
 
 const $botonResetear = document.querySelector('#resetear')
 
-const gallinas = document.querySelector('#gallinas').value //Le puse un id gallinas a River para probar
+const todosLosClubes = document.querySelectorAll('option')
+const visitantes = document.querySelector('#lista-de-visitantes')
 
-console.log(gallinas) //Esto da river
-
-//Podría probar con darles id a los equipos y así intentar acceder al classname
-
-const listaDeVisitantes = []
-for (let i = 0; i < $formEquipo1.equipo.length; i++){
-    if ($formEquipo1.equipo[i].value){
-    listaDeVisitantes.push($formEquipo1.equipo[i].value)}
-}
-console.log(listaDeVisitantes)
-
-function borrarEquipo(){
-    for (let i = 0; i < listaDeVisitantes.length; i++){
-        if (listaDeVisitantes[i] === $formEquipo1.equipo.value){
-            listaDeVisitantes.filter(listaDeVisitantes[i].value)
-        }
-    }
-}
+console.log(todosLosClubes[20].value)
 
 $botonElegirLocal.onclick = function(){
     equipo1.equipo = $formEquipo1.equipo.value
     equipoSeleccionado1 = equipo1.equipo
     infoVisitante.className = ''
-    //borrarEquipo()
+    borrarEquipo()
     return false;
+}
+
+function borrarEquipo(){
+    for (let i = 0; i < todosLosClubes.length; i++){
+        if (todosLosClubes[i].value !== equipo1.equipo && todosLosClubes[i].value !== ''){
+            let nuevaOpcion = document.createElement('option')
+            nuevaOpcion.appendChild(todosLosClubes[i]);
+            visitantes.appendChild(nuevaOpcion);
+        }
+    }
 }
 
 $botonElegirVisitante.onclick = function(){
