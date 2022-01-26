@@ -60,18 +60,17 @@ function obtenerGolesInferior(){
 }
 
 const equipo1 = {
-    equipo: equipoSeleccionado1,
-    goles: obtenerGolesEquipo1()
+    equipo: equipoSeleccionado1
 }
 
 const equipo2 = {
-    equipo: equipoSeleccionado2,
-    goles: obtenerGolesEquipo2()
+    equipo: equipoSeleccionado2
 }
 
 function obtenerGolesEquipo1(){
 
     if (equipoSeleccionado1.className === 'potencia'){
+        console.log(obtenerGolesPotencia() + 'yessss')
         return obtenerGolesPotencia()
     }
     else if (equipoSeleccionado1.className === 'superior'){
@@ -81,6 +80,7 @@ function obtenerGolesEquipo1(){
         return obtenerGolesNormal()
     }
     else {
+        console.log('Los agarró mal')
         return obtenerGolesInferior()
     }
 }
@@ -102,6 +102,9 @@ function obtenerGolesEquipo2(){
 }
 
 function jugar(){
+
+    equipo1.goles = obtenerGolesEquipo1()
+    equipo2.goles = obtenerGolesEquipo2()
 
     if (equipo1.goles > equipo2.goles) {
         resultado.innerText = equipo1.equipo + " le ganó " + equipo1.goles + '-' + equipo2.goles + ' a ' + equipo2.equipo + '.'

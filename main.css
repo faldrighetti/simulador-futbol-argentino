@@ -24,7 +24,26 @@
     display: none;
 }
 
-#resetear{
-    float: right;
+.resetear{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
     height: 70px;
+    width: 90px;
+}
+
+.jugar{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 90px;
+}
+
+#resultado{
+    font-size: 25px;
+}
+
+.error {
+    border: 2px solid red;
 }
