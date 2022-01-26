@@ -23,3 +23,8 @@
 .oculto{
     display: none;
 }
+
+#resetear{
+    float: right;
+    height: 70px;
+}

@@ -110,7 +110,10 @@ function jugar(){
         resultado.innerText = equipo2.equipo + " le ganó " + equipo2.goles + '-' + equipo1.goles + ' a ' + equipo1.equipo + '.'
     }
     else{
-        resultado.innerText = equipo1.equipo + " y " + equipo2.equipo + ' empataron ' + equipo1.goles + '-' + equipo2.goles + '.'
+        if (equipo2.equipo === 'Independiente'){
+            resultado.innerText = equipo1.equipo + " e " + equipo2.equipo + ' empataron ' + equipo1.goles + '-' + equipo2.goles + '.'
+        } else {
+        resultado.innerText = equipo1.equipo + " y " + equipo2.equipo + ' empataron ' + equipo1.goles + '-' + equipo2.goles + '.'}
     }
 }
 
@@ -124,3 +127,4 @@ function jugar(){
 //X6- Que cuando se elija un local, se elimine de la lista de visitantes. Impedir un River vs River.
 //7- Hacer un CSS bonito.
 //8- Agregar div al elegir el equipo. Por ejemplo: "Local: River", y abajo "Visitante: Boca" ya antes de cliquear Jugar
+//X9- Corregir el "River y Independiente empataron 1-1", cuando Independiente es visitante.
