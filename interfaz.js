@@ -75,6 +75,3 @@ $botonJugar.onclick = function(){
 $botonResetear.onclick = function(){
     window.location.reload()
 }
-
-
-//
