@@ -4,9 +4,6 @@ const $formEquipo1 = document.querySelector('#equipo-1')
 const $formEquipo2 = document.querySelector('#equipo-2')
 const resultado = document.querySelector('#resultado')
 
-let equipoSeleccionado1 = ''
-let equipoSeleccionado2 = ''
-
 let nivelPotencia = ['River Plate', 'Boca Juniors']
 let nivelSuperior = ['Independiente', 'Racing', 'San Lorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús', 'Talleres', 'Vélez']
 let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfield', 'Gimnasia LP', 'Godoy Cruz', 'Huracán', "Newell's", 'Rosario Central', 'Unión']
@@ -105,11 +102,11 @@ function obtenerGolesDelEquipo2(){
 
 
 const equipo1 = {
-    equipo: equipoSeleccionado1
+    equipo: $formEquipo1.equipo.value
 }
 
 const equipo2 = {
-    equipo: equipoSeleccionado2
+    equipo: $formEquipo2.equipo.value
 }
 
 function jugar(){
@@ -136,11 +133,11 @@ function jugar(){
 
 //TODO:
 
-//1- Entra al if sin distinguir las clases de cada equipo, por lo que juzga a todos como inferior. Arreglar eso.
+//X1- Entra al if sin distinguir las clases de cada equipo, por lo que juzga a todos como inferior. Arreglar eso.
 //X2- Reemplazar los console.log del resultado por un cuadro de texto en appendChild.
 //X3- Botón resetear. Línea 33 de interfaz, darle una función para que se recargue la página.
 //4- Botón jugar, darle una función que lo deshabilite cuando se le da clic. Es decir, que solo se pueda usar una vez.
-//5- Pruebas, que mandar a jugar sin elegir club dé error. O mejor, que se marque en rojo el campo si no se eligió nada.
+//X5- Pruebas, que mandar a jugar sin elegir club dé error. O mejor, que se marque en rojo el campo si no se eligió nada.
 //X6- Que cuando se elija un local, se elimine de la lista de visitantes. Impedir un River vs River.
 //7- Hacer un CSS bonito.
 //8- Agregar div al elegir el equipo. Por ejemplo: "Local: River", y abajo "Visitante: Boca" ya antes de cliquear Jugar

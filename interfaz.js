@@ -1,8 +1,13 @@
+const errorLocal = document.querySelector('#error-local')
+
 const $botonElegirLocal = document.querySelector('#boton-seleccionar-local')
 
 const $botonElegirVisitante = document.querySelector('#boton-seleccionar-visitante')
 
 const $botonJugar = document.querySelector('#boton-jugar-partido')
+
+const equipoLocal = document.querySelector('#equipo-local')
+const equipoVisitante = document.querySelector('#equipo-visitante')
 
 const infoVisitante = document.querySelector('#visitante')
 
@@ -11,16 +16,23 @@ const $botonResetear = document.querySelector('#resetear')
 const todosLosClubes = document.querySelectorAll('option')
 const visitantes = document.querySelector('#lista-de-visitantes')
 
-/*let nivelPotencia = ['River Plate', 'Boca Juniors']
-let nivelSuperior = ['Independiente', 'Racing', 'San Lorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús', 'Talleres', 'Vélez']
-let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfield', 'Gimnasia LP', 'Godoy Cruz', 'Huracán', "Newell's", 'Rosario Central', 'Unión']
-let nivelInferior = ['Aldosivi','Barracas Central', 'Central Córdoba', 'Patronato', 'Platense', 'Sarmiento', 'Tigre']*/
+function mostrarError(){
+    $formEquipo1.equipo.className = 'error'    
+    errorLocal.textContent = '¡Tenés que elegir un equipo!'
+}
 
 $botonElegirLocal.onclick = function(){
     equipo1.equipo = $formEquipo1.equipo.value
-    equipoSeleccionado1 = equipo1.equipo
-    infoVisitante.className = ''
-    crearVisitantes()
+    if (equipo1.equipo === ''){
+        mostrarError()
+    }
+    else{
+        errorLocal.textContent = ''
+        $formEquipo1.equipo.className = ''
+        infoVisitante.className = ''
+        equipoLocal.textContent = 'Local: ' + equipo1.equipo
+        crearVisitantes()
+    }
     
     return false;
 }
@@ -61,13 +73,14 @@ function crearVisitantes(){
 
 $botonElegirVisitante.onclick = function(){
     equipo2.equipo = $formEquipo2.equipo.value
-    equipoSeleccionado2 = equipo2.equipo
+    equipoVisitante.textContent = 'Visitante: ' + equipo2.equipo
     $botonJugar.className = 'jugar'
     return false;
 }
 
 $botonJugar.onclick = function(){
     jugar()
+    $botonJugar.className = 'oculto'
     $botonResetear.className = 'resetear'
     return false;
 }
