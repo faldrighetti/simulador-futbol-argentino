@@ -1,7 +1,3 @@
-const chancesPotencia = 11
-const chancesSuperior = 9
-const chancesNormal = 7
-const chancesInferior = 5
 const carasDelDado = 6
 
 const $formEquipo1 = document.querySelector('#equipo-1')
@@ -11,97 +7,87 @@ const resultado = document.querySelector('#resultado')
 let equipoSeleccionado1 = ''
 let equipoSeleccionado2 = ''
 
-function dado(){
+let nivelPotencia = ['River Plate', 'Boca Juniors']
+let nivelSuperior = ['Independiente', 'Racing', 'San Lorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús', 'Talleres', 'Vélez']
+let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfield', 'Gimnasia LP', 'Godoy Cruz', 'Huracán', "Newell's", 'Rosario Central', 'Unión']
+let nivelInferior = ['Aldosivi','Barracas Central', 'Central Córdoba', 'Patronato', 'Platense', 'Sarmiento', 'Tigre']
+
+
+function tirarDado(){
    return Math.floor(Math.random() * carasDelDado) + 1; // dado 1-6
 }
 
-function obtenerGolesPotencia(){
+//Esto de abajo está mal, no entra al if ni asigna la clase de cada nivel.
+
+function obtenerGolesDelEquipo1(){
+
     let totalGoles = []
-    for (let i = 0; i < chancesPotencia; i++){
-        let chance = dado()
+
+    for(let i = 0; i < nivelPotencia.length; i++){
+        if (nivelPotencia[i] === $formEquipo1.equipo.value){
+            equipoSeleccionado1.className = 'potencia'
+        }
+    }
+    
+    let chancesDeGol = 5
+
+    if (equipoSeleccionado1.className === 'potencia'){
+        console.log('Funciona')
+        chancesDeGol = 11
+    } else if (equipoSeleccionado1.className === 'superior'){
+        chancesDeGol = 9
+    } else if( equipoSeleccionado1.className === 'normal'){
+        chancesDeGol = 7
+    }
+    
+ 
+    for (let i = 0; i < chancesDeGol; i++){
+        let chance = tirarDado()
         if (chance === 1){
             totalGoles.push('gol') 
         }
     }
+
     return totalGoles.length
 }
 
-function obtenerGolesSuperior(){
+function obtenerGolesDelEquipo2(){
+    
     let totalGoles = []
-    for (let i = 0; i < chancesSuperior; i++){
-        let chance = dado()
+    let chancesDeGol = 5
+    
+    if (equipoSeleccionado2.className === 'potencia'){
+        chancesDeGol = 11
+    } else if (equipoSeleccionado2.className === 'superior'){
+        chancesDeGol = 9
+    } else if( equipoSeleccionado2.className === 'normal'){
+        chancesDeGol = 7
+    }
+
+
+    for (let i = 0; i < chancesDeGol; i++){
+        let chance = tirarDado()
         if (chance === 1){
             totalGoles.push('gol') 
         }
     }
+
     return totalGoles.length
 }
- 
-function obtenerGolesNormal(){
-    let totalGoles = []
-    for (let i = 0; i < chancesNormal; i++){
-        let chance = dado()
-        if (chance === 1){
-            totalGoles.push('gol') 
-        }
-    }
-    return totalGoles.length
-}
- 
-function obtenerGolesInferior(){
-     let totalGoles = []
-     for (let i = 0; i < chancesInferior; i++){
-        let chance = dado()
-        if (chance === 1){
-            totalGoles.push('gol')
-        }
-     }
-     return totalGoles.length
-}
+
 
 const equipo1 = {
-    equipo: equipoSeleccionado1,
-    goles: obtenerGolesEquipo1()
+    equipo: equipoSeleccionado1
 }
 
 const equipo2 = {
-    equipo: equipoSeleccionado2,
-    goles: obtenerGolesEquipo2()
-}
-
-function obtenerGolesEquipo1(){
-
-    if (equipoSeleccionado1.className === 'potencia'){
-        return obtenerGolesPotencia()
-    }
-    else if (equipoSeleccionado1.className === 'superior'){
-        return obtenerGolesSuperior()
-    }
-    else if (equipoSeleccionado1.className === 'normal'){
-        return obtenerGolesNormal()
-    }
-    else {
-        return obtenerGolesInferior()
-    }
-}
-
-function obtenerGolesEquipo2(){
-    
-    if (equipoSeleccionado2.className === 'potencia'){
-        return obtenerGolesPotencia()
-    }
-    else if (equipoSeleccionado2.className === 'superior'){
-        return obtenerGolesSuperior()
-    }
-    else if (equipoSeleccionado2.className === 'normal'){
-        return obtenerGolesNormal()
-    }
-    else{
-        return obtenerGolesInferior()
-    }
+    equipo: equipoSeleccionado2
 }
 
 function jugar(){
+
+    equipo1.goles = obtenerGolesDelEquipo1()
+    equipo2.goles = obtenerGolesDelEquipo2()
 
     if (equipo1.goles > equipo2.goles) {
         resultado.innerText = equipo1.equipo + " le ganó " + equipo1.goles + '-' + equipo2.goles + ' a ' + equipo2.equipo + '.'
