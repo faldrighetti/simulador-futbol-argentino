@@ -27,18 +27,21 @@ function obtenerGolesDelEquipo1(){
     for(let i = 0; i < nivelPotencia.length; i++){
         if (nivelPotencia[i] === $formEquipo1.equipo.value){
            equipo1.clase = 'potencia'
+           chancesDeGol = 11
         }
     }
 
     for(let j = 0; j < nivelSuperior.length; j++){
         if(nivelSuperior[j] === $formEquipo1.equipo.value){
             equipo1.clase = 'superior'
+            chancesDeGol = 9
         }
     }
 
     for(let k = 0; k < nivelNormal.length; k++){
         if(nivelNormal[k] === $formEquipo1.equipo.value){
             equipo1.clase = 'normal'
+            chancesDeGol = 7
         }
     }
 
@@ -48,15 +51,6 @@ function obtenerGolesDelEquipo1(){
         }
     }
 
-    if (equipo1.clase === 'potencia'){
-        chancesDeGol = 11
-    } else if (equipo1.clase === 'superior'){
-        chancesDeGol = 9
-    } else if( equipo1.clase === 'normal'){
-        chancesDeGol = 7
-    } else {
-    }
- 
     for (let i = 0; i < chancesDeGol; i++){
         let chance = tirarDado()
         if (chance === 1){
@@ -75,18 +69,21 @@ function obtenerGolesDelEquipo2(){
     for(let i = 0; i < nivelPotencia.length; i++){
         if (nivelPotencia[i] === $formEquipo2.equipo.value){
            equipo2.clase = 'potencia'
+           chancesDeGol = 11
         }
     }
 
     for(let j = 0; j < nivelSuperior.length; j++){
         if(nivelSuperior[j] === $formEquipo2.equipo.value){
             equipo2.clase = 'superior'
+            chancesDeGol = 9
         }
     }
 
     for(let k = 0; k < nivelNormal.length; k++){
         if(nivelNormal[k] === $formEquipo2.equipo.value){
             equipo2.clase = 'normal'
+            chancesDeGol = 7
         }
     }
 
@@ -95,17 +92,6 @@ function obtenerGolesDelEquipo2(){
             equipo2.clase = 'inferior'
         }
     }
-
-    if (equipo2.clase === 'potencia'){
-        chancesDeGol = 11
-    } else if (equipo2.clase === 'superior'){
-        chancesDeGol = 9
-    } else if(equipo2.clase === 'normal'){
-        chancesDeGol = 7
-    } else if(equipo2.clase === 'inferior'){
-        chancesDeGol = 5
-    }
-
 
     for (let i = 0; i < chancesDeGol; i++){
         let chance = tirarDado()
