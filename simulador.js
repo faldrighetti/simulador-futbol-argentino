@@ -4,6 +4,12 @@ const $formEquipo1 = document.querySelector('#equipo-1')
 const $formEquipo2 = document.querySelector('#equipo-2')
 const resultado = document.querySelector('#resultado')
 
+const chancesDeGolPotencia = 11
+const chancesDeGolSuperior = 9
+const chancesDeGolNormal = 7
+const chancesDeGolInferior = 5
+let chancesDeGol = 0
+
 let nivelPotencia = ['River Plate', 'Boca Juniors']
 let nivelSuperior = ['Independiente', 'Racing', 'San Lorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús', 'Talleres', 'Vélez']
 let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfield', 'Gimnasia LP', 'Godoy Cruz', 'Huracán', "Newell's", 'Rosario Central', 'Unión']
@@ -19,32 +25,32 @@ function tirarDado(){
 function obtenerGolesDelEquipo1(){
 
     let totalGoles = []
-    let chancesDeGol = 5
 
     for(let i = 0; i < nivelPotencia.length; i++){
         if (nivelPotencia[i] === $formEquipo1.equipo.value){
            equipo1.clase = 'potencia'
-           chancesDeGol = 11
+           chancesDeGol = chancesDeGolPotencia
         }
     }
 
     for(let j = 0; j < nivelSuperior.length; j++){
         if(nivelSuperior[j] === $formEquipo1.equipo.value){
             equipo1.clase = 'superior'
-            chancesDeGol = 9
+            chancesDeGol = chancesDeGolSuperior
         }
     }
 
     for(let k = 0; k < nivelNormal.length; k++){
         if(nivelNormal[k] === $formEquipo1.equipo.value){
             equipo1.clase = 'normal'
-            chancesDeGol = 7
+            chancesDeGol = chancesDeGolNormal
         }
     }
 
     for(let l = 0; l < nivelInferior.length; l++){
         if(nivelInferior[l] === $formEquipo1.equipo.value){
             equipo1.clase = 'inferior'
+            chancesDeGol = chancesDeGolInferior
         }
     }
 
@@ -61,32 +67,32 @@ function obtenerGolesDelEquipo1(){
 function obtenerGolesDelEquipo2(){
     
     let totalGoles = []
-    let chancesDeGol = 5
     
     for(let i = 0; i < nivelPotencia.length; i++){
         if (nivelPotencia[i] === $formEquipo2.equipo.value){
            equipo2.clase = 'potencia'
-           chancesDeGol = 11
+           chancesDeGol = chancesDeGolPotencia
         }
     }
 
     for(let j = 0; j < nivelSuperior.length; j++){
         if(nivelSuperior[j] === $formEquipo2.equipo.value){
             equipo2.clase = 'superior'
-            chancesDeGol = 9
+            chancesDeGol = chancesDeGolSuperior
         }
     }
 
     for(let k = 0; k < nivelNormal.length; k++){
         if(nivelNormal[k] === $formEquipo2.equipo.value){
             equipo2.clase = 'normal'
-            chancesDeGol = 7
+            chancesDeGol = chancesDeGolNormal
         }
     }
 
     for(let l = 0; l < nivelInferior.length; l++){
         if(nivelInferior[l] === $formEquipo2.equipo.value){
             equipo2.clase = 'inferior'
+            chancesDeGol = chancesDeGolInferior
         }
     }
 
@@ -99,7 +105,6 @@ function obtenerGolesDelEquipo2(){
 
     return totalGoles.length
 }
-
 
 const equipo1 = {
     equipo: $formEquipo1.equipo.value
