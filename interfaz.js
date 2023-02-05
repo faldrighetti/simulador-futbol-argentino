@@ -48,6 +48,7 @@ $botonElegirLocal.onclick = function(){
 //7 Hacer que el club elegido se ponga en cierto color y un texto abajo.
 //8 Hacer que el local no se pueda hacer sin elegir un club primero.
 //9 Hacer que las dimensiones los divs donde están los equipos se ajusten a la cantidad de clubes
+//10 HACER RESPONSIVE
 
 function crearVisitantes(){
     for (let i = 0; i < todosLosClubes.length; i++){
