@@ -20,7 +20,12 @@ function tirarDado(){
    return Math.floor(Math.random() * carasDelDado) + 1; // dado 1-6
 }
 
-//Esto de abajo está mal, no entra al if ni asigna la clase de cada nivel.
+//Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
+//Función general obtenerGoles(equipo)
+//If clase == potencia: chancesDeGol = chances.potencia;
+//let goles = 0
+// if chance = 1: goles++;
+//return goles;
 
 function obtenerGolesDelEquipo1(){
 
