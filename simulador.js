@@ -20,6 +20,18 @@ function tirarDado(){
    return Math.floor(Math.random() * carasDelDado) + 1; // dado 1-6
 }
 
+const River = {
+    nombre: 'River Plate',
+    nivel: 'potencia',
+    escudo: ''
+}
+
+const Boca = {
+    nombre: 'Boca Juniors',
+    nivel: 'potencia',
+    escudo: ''
+}
+
 //Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
 //Función general obtenerGoles(equipo)
 //If clase == potencia: chancesDeGol = chances.potencia;
@@ -120,9 +132,6 @@ const equipo2 = {
 }
 
 function jugar(){
-
-    console.log(equipo1)
-    console.log(equipo2)
 
     equipo1.goles = obtenerGolesDelEquipo1()
     equipo2.goles = obtenerGolesDelEquipo2()
