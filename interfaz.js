@@ -37,18 +37,17 @@ $botonElegirLocal.onclick = function(){
     return false;
 }
 
-//1 cambiar nombre de crearVisitantes() a crearListaDeEquipos()
+//1 Cambiar nombre de crearVisitantes() a crearListaDeEquipos()
 //2 Hacer un forEach para crear los cuadros con los clubes. Tienen que ser todos un button con su clase asignada
-// en el nivel y id nombredelclub
-//3 No olvidar que se hace con los .value 
-//4 Hacer objetos: Nombre del club = club.nombre, nivel = club.nivel, con los backticks
-//5 Crear objeto vacío para cada club que va a jugar :local.nombre = club.nombre, visitante.nombre = club.nombre
-//También puedo hacerlo con una lista de keys. Se hace una lista y se elimina al local para elegir al visitante.
-//6 Usar flex para ponerlos dentro de un cuadro y alinearlos.
-//7 Hacer que el club elegido se ponga en cierto color y un texto abajo.
-//8 Hacer que el local no se pueda hacer sin elegir un club primero.
-//9 Hacer que las dimensiones los divs donde están los equipos se ajusten a la cantidad de clubes
-//10 HACER RESPONSIVE
+//  en el nivel y id nombredelclub. No olvidar que se hace con los .value 
+//3 Hacer objetos: Nombre del club = club.nombre, nivel = club.nivel, con los backticks
+//4 Crear objeto vacío para cada club que va a jugar :local.nombre = club.nombre, visitante.nombre = club.nombre
+//  También puedo hacerlo con una lista de keys. Se hace una lista y se elimina al local para elegir al visitante.
+//5 Usar flex para ponerlos dentro de un cuadro y alinearlos.
+//6 Hacer que el club elegido se ponga en cierto color y un texto abajo. Y al hacer clic en otro, se borre el que ya está.
+//7 Hacer error que diga que el local no se pueda hacer sin elegir un club primero.
+//8 Hacer que las dimensiones de los divs donde están los equipos se ajusten a la cantidad de clubes
+//9 HACER RESPONSIVE
 
 function crearVisitantes(){
     for (let i = 0; i < todosLosClubes.length; i++){
