@@ -51,8 +51,6 @@ function asignarEquipos(){
     return datosClubes;
 }
 
-console.log(asignarEquipos())
-
 //Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
 //Función general obtenerGoles(equipo)
 //If clase == potencia: chancesDeGol = chances.potencia;

@@ -10,34 +10,26 @@
 <body>
     <h2>Simulador de resultados del fútbol argentino</h2>
 
-    <div id="local">
-        <form id="equipo-1">
+    <main class="container-clubes">
+
+        <div id="local">
             <p>Elegí el equipo local </p>
-
-            <button id="boton-seleccionar-local">Elegir equipo local</button>
-            </p>
-            <div id="error-local"></div>
-            <div id="equipo-local" class="info"></div>
-        </form>
-    </div>
-
-        <div id="visitante" class="oculto">
-            <form id="equipo-2">
-            <p>Elegí el equipo visitante </p>
-                <select name="equipo" id='lista-de-visitantes'>
-                </select>
-                
-            </p>
-            <button id="boton-seleccionar-visitante">Elegir equipo visitante</button>
-            <br>
-            <br>
-        </form>
+            <div id="equipo-1" class="container">            
+                <div id="error-local"></div>
+                <div id="equipo-local" class="info"></div>
+            </div>
         </div>
-       
-        <div id="equipo-visitante" class="info"></div>
 
-    <br>
-    <br>
+        <div id="visitante">
+            <p>Elegí el equipo visitante </p>
+            <div id="equipo-2" class="container">            
+                <div id="error-visitante"></div>
+                <div id="equipo-visitante" class="info"></div>
+            </div>
+        </div>
+      
+    </main>
+
     <button id="boton-jugar-partido" class="oculto">Jugar!</button>
     
     <p id="resultado"></p>
