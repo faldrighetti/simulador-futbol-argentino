@@ -11,6 +11,23 @@ function mostrarError(){
     errorLocal.textContent = '¡Tenés que elegir un equipo!'
 }
 
+function asignarClaseNivel(equipo){
+
+    if(nivelPotencia.includes(equipo.innerText)) {
+        equipo.className = 'equipo-potencia';
+    }
+    else if (nivelSuperior.includes(equipo.innerText)){
+        equipo.className = 'equipo-superior';
+    }
+    else if (nivelNormal.includes(equipo.innerText)){
+        equipo.className = 'equipo-normal';
+    }
+    else if (nivelInferior.includes(equipo.innerText)){
+        equipo.className = 'equipo-inferior';
+    }
+}
+
+
 function crearCuadros(){
     let clubes = asignarEquipos();
     let llaves = Object.keys(clubes);
@@ -20,16 +37,16 @@ function crearCuadros(){
     }
     
     llaves.forEach(function(elemento){
-        console.log(elemento)
         const cuadro = document.createElement('button');
         cuadro.innerText = elemento;
+        asignarClaseNivel(cuadro)
         localDiv.appendChild(cuadro); 
     })
 
     llaves.forEach(function(elemento){
-        console.log(elemento)
         const cuadro = document.createElement('button');
         cuadro.innerText = elemento;
+        asignarClaseNivel(cuadro)
         visitanteDiv.appendChild(cuadro) 
     })
 }
@@ -48,12 +65,12 @@ crearCuadros()
 //8 Hacer que las dimensiones de los divs donde están los equipos se ajusten a la cantidad de clubes
 //9 HACER RESPONSIVE
 
-$botonElegirVisitante.onclick = function(){
+/*$botonElegirVisitante.onclick = function(){
     equipo2.equipo = $formEquipo2.equipo.value
     equipoVisitante.textContent = 'Visitante: ' + equipo2.equipo
     $botonJugar.className = 'jugar'
     return false;
-}
+}*/
 
 $botonJugar.onclick = function(){
     jugar()

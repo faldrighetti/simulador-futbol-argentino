@@ -3,18 +3,30 @@
 }
 
 .equipo-potencia{
+    font-weight: bold;
+    font-size: 11px;
+    background-color: transparent;
     border: solid gold 0.5px;
 }
 
 .equipo-superior{
+    font-weight: bold;
+    font-size: 11px;
+    background-color: transparent;
     border: solid green 0.5 px;
 }
 
 .equipo-normal{
+    font-weight: bold;
+    font-size: 11px;
+    background-color: transparent;
     border: solid orange 0.5 px;
 }
 
 .equipo-inferior{
+    font-weight: bold;
+    font-size: 11px;
+    background-color: transparent;
     border: solid orangered 0.5 px;
 }
 
