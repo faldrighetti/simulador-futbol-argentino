@@ -2,30 +2,24 @@
     text-align: center;
 }
 
+.equipo-potencia{
+    border: solid gold 0.5px;
+}
+
+.equipo-superior{
+    border: solid green 0.5 px;
+}
+
+.equipo-normal{
+    border: solid orange 0.5 px;
+}
+
+.equipo-inferior{
+    border: solid orangered 0.5 px;
+}
+
 .info{
     font-style: italic;
-}
-
-.potencia{
-    background-color: gold;
-}
-
-.superior{
-    background-color: green;
-    color: white;
-}
-
-.normal{
-    background-color: orange;
-}
-
-.inferior{
-    background-color: orangered;
-    color: white;
-}
-
-.oculto{
-    display: none;
 }
 
 .resetear{
@@ -69,7 +63,7 @@ body{
 
 .container-clubes{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     gap: 20px;
 }
 

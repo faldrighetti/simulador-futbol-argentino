@@ -18,7 +18,7 @@ const chancesDeGolInferior = 5
 let chancesDeGol = 0
 
 let nivelPotencia = ['River Plate', 'Boca Juniors']
-let nivelSuperior = ['Independiente', 'Racing', 'SanLorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús',
+let nivelSuperior = ['Independiente', 'Racing', 'San Lorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús',
 'Talleres', 'Vélez']
 let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfield', 'Gimnasia LP', 'Godoy Cruz',
 'Huracán', "Newell's", 'Rosario Central', 'Unión']

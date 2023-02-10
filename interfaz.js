@@ -1,21 +1,10 @@
 const errorLocal = document.querySelector('#error-local')
 
-const $botonElegirLocal = document.querySelector('#boton-seleccionar-local')
-const $botonElegirVisitante = document.querySelector('#boton-seleccionar-visitante')
-
 const $botonJugar = document.querySelector('#boton-jugar-partido')
-
-const equipoLocal = document.querySelector('#equipo-local')
-const equipoVisitante = document.querySelector('#equipo-visitante')
-
-const infoVisitante = document.querySelector('#visitante')
-
 const $botonResetear = document.querySelector('#resetear')
 
 const localDiv = document.querySelector('#equipo-1')
 const visitanteDiv = document.querySelector('#equipo-2')
-
-const visitantes = document.querySelector('#lista-de-visitantes')
 
 function mostrarError(){
     $formEquipo1.equipo.className = 'error'    
@@ -53,7 +42,7 @@ crearCuadros()
 //✔ 3 Hacer objetos: Nombre del club = club.nombre, nivel = club.nivel, con los backticks
 //✔ 4 Crear objeto vacío para cada club que va a jugar :local.nombre = club.nombre, visitante.nombre = club.nombre
 //  También puedo hacerlo con una lista de keys. Se hace una lista y se elimina al local para elegir al visitante.
-//5 Usar flex para ponerlos dentro de un cuadro y alinearlos.
+//5 ✔Usar flex para ponerlos dentro de un cuadro y alinearlos.
 //6 Hacer que el club elegido se ponga en cierto color y un texto abajo. Y al hacer clic en otro, se borre el que ya está.
 //7 Hacer error que diga que el local no se pueda hacer sin elegir un club primero.
 //8 Hacer que las dimensiones de los divs donde están los equipos se ajusten a la cantidad de clubes
