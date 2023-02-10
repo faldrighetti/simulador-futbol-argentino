@@ -4,6 +4,13 @@ const $formEquipo1 = document.querySelector('#equipo-1')
 const $formEquipo2 = document.querySelector('#equipo-2')
 const resultado = document.querySelector('#resultado')
 
+const chancesDeGolNivel = {
+    potencia: 11,
+    superior: 9,
+    normal: 7,
+    inferior: 5
+}
+
 const chancesDeGolPotencia = 11
 const chancesDeGolSuperior = 9
 const chancesDeGolNormal = 7
@@ -11,26 +18,46 @@ const chancesDeGolInferior = 5
 let chancesDeGol = 0
 
 let nivelPotencia = ['River Plate', 'Boca Juniors']
-let nivelSuperior = ['Independiente', 'Racing', 'San Lorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús', 'Talleres', 'Vélez']
-let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfield', 'Gimnasia LP', 'Godoy Cruz', 'Huracán', "Newell's", 'Rosario Central', 'Unión']
+let nivelSuperior = ['Independiente', 'Racing', 'SanLorenzo', 'Colón', 'Defensa y Justicia', 'Estudiantes LP', 'Lanús',
+'Talleres', 'Vélez']
+let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfield', 'Gimnasia LP', 'Godoy Cruz',
+'Huracán', "Newell's", 'Rosario Central', 'Unión']
 let nivelInferior = ['Aldosivi','Barracas Central', 'Central Córdoba', 'Patronato', 'Platense', 'Sarmiento', 'Tigre']
-
+let todosLosClubes = nivelPotencia.concat(nivelSuperior.concat(nivelNormal.concat(nivelInferior)));
 
 function tirarDado(){
    return Math.floor(Math.random() * carasDelDado) + 1; // dado 1-6
 }
 
-const River = {
-    nombre: 'River Plate',
-    nivel: 'potencia',
-    escudo: ''
+objetoClubes = {}
+const datos = {
+    nombre: '', nivel: ''
 }
 
-const Boca = {
-    nombre: 'Boca Juniors',
-    nivel: 'potencia',
-    escudo: ''
+function pasarEquipos(){
+
+    todosLosClubes.forEach(function(elemento){
+        objetoClubes[elemento] = datos;
+        if(nivelPotencia.includes(elemento)) {
+            objetoClubes[elemento].nivel = 'potencia';
+        }
+        else if (nivelSuperior.includes(elemento)){
+            objetoClubes[elemento].nivel = 'superior';
+        }
+        else if (nivelNormal.includes(elemento)){
+            objetoClubes[elemento].nivel = 'normal';
+        }
+        else if (nivelInferior.includes(elemento)){
+            objetoClubes[elemento].nivel = 'inferior';
+        }
+    })
+
+    return objetoClubes;
+
 }
+pasarEquipos()
+
+//console.log(objetoClubes);
 
 //Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
 //Función general obtenerGoles(equipo)
@@ -123,13 +150,13 @@ function obtenerGolesDelEquipo2(){
     return totalGoles.length
 }
 
-const equipo1 = {
+/*const equipo1 = {
     equipo: $formEquipo1.equipo.value
 }
 
 const equipo2 = {
     equipo: $formEquipo2.equipo.value
-}
+}*/
 
 function jugar(){
 
