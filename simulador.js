@@ -29,35 +29,29 @@ function tirarDado(){
    return Math.floor(Math.random() * carasDelDado) + 1; // dado 1-6
 }
 
-objetoClubes = {}
-const datos = {
-    nombre: '', nivel: ''
+function asignarEquipos(){
+    const datosClubes = {}
+    for(let i = 0; i < todosLosClubes.length; i++){
+        datosClubes[`${todosLosClubes[i]}`] = {nombre: todosLosClubes[i], nivel: ''};
+        datosClubes[`${todosLosClubes[i]}`].nombre = todosLosClubes[i];
+        if(nivelPotencia.includes(todosLosClubes[i])) {
+            datosClubes[`${todosLosClubes[i]}`].nivel = 'potencia';
+        }
+        else if (nivelSuperior.includes(todosLosClubes[i])){
+            datosClubes[`${todosLosClubes[i]}`].nivel = 'superior';
+        }
+        else if (nivelNormal.includes(todosLosClubes[i])){
+            datosClubes[`${todosLosClubes[i]}`].nivel = 'normal';
+        }
+        else if (nivelInferior.includes(todosLosClubes[i])){
+            datosClubes[`${todosLosClubes[i]}`].nivel = 'inferior';
+        }
+    }
+
+    return datosClubes;
 }
 
-function pasarEquipos(){
-
-    todosLosClubes.forEach(function(elemento){
-        objetoClubes[elemento] = datos;
-        if(nivelPotencia.includes(elemento)) {
-            objetoClubes[elemento].nivel = 'potencia';
-        }
-        else if (nivelSuperior.includes(elemento)){
-            objetoClubes[elemento].nivel = 'superior';
-        }
-        else if (nivelNormal.includes(elemento)){
-            objetoClubes[elemento].nivel = 'normal';
-        }
-        else if (nivelInferior.includes(elemento)){
-            objetoClubes[elemento].nivel = 'inferior';
-        }
-    })
-
-    return objetoClubes;
-
-}
-pasarEquipos()
-
-//console.log(objetoClubes);
+console.log(asignarEquipos())
 
 //Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
 //Función general obtenerGoles(equipo)

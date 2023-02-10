@@ -41,7 +41,7 @@ $botonElegirLocal.onclick = function(){
 }
 
 function crearCuadros(){
-    let clubes = pasarEquipos();
+    let clubes = asignarEquipos();
     let llaves = Object.keys(clubes);
 
     for(let i = 0; i < llaves.length; i++){
@@ -49,7 +49,7 @@ function crearCuadros(){
         //console.log(clubes[clave])
     }
     let entr = Object.entries(clubes)
-    console.log(entr)
+    //console.log(entr)
     
     llaves.forEach(function(elemento){
         //console.log(elemento)
