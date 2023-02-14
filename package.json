@@ -1,0 +1,22 @@
+{
+  "name": "simulador-futbol-argentino",
+  "version": "2.0.0",
+  "description": "Juego mejorado de simulador de futbol",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faldrighetti/simulador-futbol-argentino.git"
+  },
+  "author": "Federico Aldrighetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faldrighetti/simulador-futbol-argentino/issues"
+  },
+  "homepage": "https://github.com/faldrighetti/simulador-futbol-argentino#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
