@@ -25,6 +25,10 @@ let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfi
 let nivelInferior = ['Aldosivi','Barracas Central', 'Central Córdoba', 'Patronato', 'Platense', 'Sarmiento', 'Tigre']
 let todosLosClubes = nivelPotencia.concat(nivelSuperior.concat(nivelNormal.concat(nivelInferior)));
 
+const clubes = {
+
+}
+
 function tirarDado(){
    return Math.floor(Math.random() * carasDelDado) + 1; // dado 1-6
 }

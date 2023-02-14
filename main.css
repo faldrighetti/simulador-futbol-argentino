@@ -2,41 +2,44 @@
     text-align: center;
 }
 
-.equipo-potencia{
+.prueba{
+    color: red;
+}
+
+h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.equipoPotencia{
+    border: solid gold 1px;
+}
+
+.equipoSuperior{
+    border: solid forestgreen 1px;
+}
+
+.equipoNormal{
+    border: solid orange 1px;
+}
+
+.equipoInferior{
+    border: solid orangered 1px;
+}
+
+.equipoPotencia, .equipoNormal, .equipoSuperior, .equipoInferior{
     font-weight: bold;
-    font-size: 11px;
+    font-size: 10px;
     height: 110px;
     width: 80px;
     border-radius: 2px;
     background-color: transparent;
-    border: solid gold 1px;
+    margin: 0 0.5% 0.5%;
 }
 
-.equipo-superior{
-    font-weight: bold;
-    font-size: 11px;
-    height: 110px;
-    width: 80px;
-    background-color: transparent;
-    border: solid green 1 px;
-}
-
-.equipo-normal{
-    font-weight: bold;
-    font-size: 11px;
-    height: 110px;
-    width: 80px;
-    background-color: transparent;
-    border: solid orange 1 px;
-}
-
-.equipo-inferior{
-    font-weight: bold;
-    font-size: 11px;
-    height: 110px;
-    width: 80px;
-    background-color: transparent;
-    border: solid orangered 1 px;
+.equipoPotencia:hover, .equipoNormal:hover, .equipoSuperior:hover, .equipoInferior:hover{
+    border: solid rgb(255, 6, 6) 2px;
 }
 
 .info{
@@ -44,7 +47,7 @@
 }
 
 .resetear{
-    display:block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     height: 70px;
@@ -52,7 +55,7 @@
 }
 
 .jugar{
-    display:block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     height: 70px;
@@ -72,22 +75,23 @@ body{
     background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 49%, rgba(0,212,255,1) 100%);
 }
 
-.container{
+.container1, .container2{
     border: solid 2px rgb(207, 243, 5);
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 600px;
-    height: 450px;
+    width: 430px;
+    overflow: auto;
+    display: flex;
 }
 
-.container-clubes{
+.container1{
+    margin-right: 70px; 
+}
+
+.containerClubes{
     display: flex;
     justify-content: space-around;
     gap: 20px;
-}
-
-#visitante{
-    justify-content: right;
 }

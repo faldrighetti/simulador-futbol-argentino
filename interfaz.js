@@ -14,44 +14,53 @@ function mostrarError(){
 function asignarClaseNivel(equipo){
 
     if(nivelPotencia.includes(equipo.innerText)) {
-        equipo.className = 'equipo-potencia';
+        equipo.className = 'equipoPotencia';
     }
     else if (nivelSuperior.includes(equipo.innerText)){
-        equipo.className = 'equipo-superior';
+        equipo.className = 'equipoSuperior';
     }
     else if (nivelNormal.includes(equipo.innerText)){
-        equipo.className = 'equipo-normal';
+        equipo.className = 'equipoNormal';
     }
     else if (nivelInferior.includes(equipo.innerText)){
-        equipo.className = 'equipo-inferior';
+        equipo.className = 'equipoInferior';
     }
+    equipo.classList.add('equipo');
 }
 
+
+//BOTON JUGAR .ONCLICK VA A LLAMAR A ELEGIR EQUIPO:
+function elegirEquipo(event){
+    event.preventDefault();
+    
+    const listaEquipos = document.querySelectorAll('.equipo');
+    for(let i = 0; i < listaEquipos.length; i++){
+        console.log(listaEquipos[i].innerText) //IMPRIME LOS EQUIPOS
+    }
+    //ACÁ FALTA HACER ALGO QUE CAPTURE EL BOTÓN CLICKEADO Y LO MANDE
+}
 
 function crearCuadros(){
     let clubes = asignarEquipos();
     let llaves = Object.keys(clubes);
-
-    for(let i = 0; i < llaves.length; i++){
-        let clave = llaves[i]
-    }
     
     llaves.forEach(function(elemento){
         const cuadro = document.createElement('button');
+        cuadro.style.textAlign = 'center';
         cuadro.innerText = elemento;
         asignarClaseNivel(cuadro)
-        localDiv.appendChild(cuadro); 
+        
+        localDiv.appendChild(cuadro);
     })
-
     llaves.forEach(function(elemento){
         const cuadro = document.createElement('button');
         cuadro.innerText = elemento;
-        asignarClaseNivel(cuadro)
-        visitanteDiv.appendChild(cuadro) 
+        asignarClaseNivel(cuadro);
+        visitanteDiv.appendChild(cuadro);
     })
 }
 
-crearCuadros()
+crearCuadros();
 
 //✔ 1 Cambiar nombre de crearListaDeEquipos() a crearListaDeEquipos()
 //2 Hacer un forEach para crear los cuadros con los clubes. Tienen que ser todos un button con su clase asignada
@@ -73,9 +82,9 @@ crearCuadros()
 }*/
 
 $botonJugar.onclick = function(){
-    jugar()
-    $botonJugar.className = 'oculto'
-    $botonResetear.className = 'resetear'
+    jugar();
+    $botonJugar.className = 'oculto';
+    $botonResetear.className = 'resetear';
     return false;
 }
 
