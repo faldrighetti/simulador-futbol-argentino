@@ -39,7 +39,10 @@ h3{
 }
 
 .equipoPotencia:hover, .equipoNormal:hover, .equipoSuperior:hover, .equipoInferior:hover{
-    border: solid rgb(255, 6, 6) 2px;
+    border: solid rgb(196, 196, 196) 2px;
+    cursor: pointer;
+    background-color: rgb(120, 8, 224);
+    color: rgb(196, 196, 196);
 }
 
 .info{

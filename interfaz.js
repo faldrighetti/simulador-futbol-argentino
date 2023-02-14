@@ -28,16 +28,17 @@ function asignarClaseNivel(equipo){
     equipo.classList.add('equipo');
 }
 
+$botonJugar.onclick = function(){
 
-//BOTON JUGAR .ONCLICK VA A LLAMAR A ELEGIR EQUIPO:
-function elegirEquipo(event){
-    event.preventDefault();
-    
-    const listaEquipos = document.querySelectorAll('.equipo');
-    for(let i = 0; i < listaEquipos.length; i++){
-        console.log(listaEquipos[i].innerText) //IMPRIME LOS EQUIPOS
+}
+
+function manejarClick(cuadro){
+    cuadro.onclick = function(event){
+        const elemento = event.target;
+        console.log(elemento.innerText); //CUANDO HAGO CLIC EN UN EQUIPO, HACE UN CONSOLE.LOG DE SU NOMBRE
+        //ACÁ TENGO QUE HACER LA INFO DEL CLUB ELEGIDO
+        //FALTA RELACIONARLO CON EL SIMULADOR
     }
-    //ACÁ FALTA HACER ALGO QUE CAPTURE EL BOTÓN CLICKEADO Y LO MANDE
 }
 
 function crearCuadros(){
@@ -46,18 +47,19 @@ function crearCuadros(){
     
     llaves.forEach(function(elemento){
         const cuadro = document.createElement('button');
-        cuadro.style.textAlign = 'center';
         cuadro.innerText = elemento;
         asignarClaseNivel(cuadro)
-        
+        manejarClick(cuadro);
         localDiv.appendChild(cuadro);
     })
     llaves.forEach(function(elemento){
         const cuadro = document.createElement('button');
         cuadro.innerText = elemento;
         asignarClaseNivel(cuadro);
+        manejarClick(cuadro);
         visitanteDiv.appendChild(cuadro);
     })
+    
 }
 
 crearCuadros();
