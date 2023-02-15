@@ -55,6 +55,23 @@ function asignarEquipos(){
     return datosClubes;
 }
 
+console.log(asignarEquipos()['River Plate'].nombre)
+
+function jugarPartido(){
+    let golesLocal = 0;
+    let golesVisitante = 0;
+
+    for(let i = 0; i < chancesDeGol.potencia; i++){
+        let chanceLocal = tirarDado();
+        if (chanceLocal === 1){
+            golesLocal++;
+        }
+    }
+    
+
+    return [golesLocal, golesVisitante]
+}
+
 //Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
 //Función general obtenerGoles(equipo)
 //If clase == potencia: chancesDeGol = chances.potencia;

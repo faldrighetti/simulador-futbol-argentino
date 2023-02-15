@@ -28,9 +28,13 @@ h3{
     border: solid orangered 1px;
 }
 
+.container1{
+    margin-right: 600px;
+}
+
 .equipoPotencia, .equipoNormal, .equipoSuperior, .equipoInferior{
     font-weight: bold;
-    font-size: 10px;
+    font-size: 10.5px;
     height: 110px;
     width: 80px;
     border-radius: 2px;
@@ -39,14 +43,19 @@ h3{
 }
 
 .equipoPotencia:hover, .equipoNormal:hover, .equipoSuperior:hover, .equipoInferior:hover{
-    border: solid rgb(196, 196, 196) 2px;
+    border: solid rgb(4, 44, 0) 2px;
     cursor: pointer;
     background-color: rgb(120, 8, 224);
     color: rgb(196, 196, 196);
 }
 
-.info{
-    font-style: italic;
+.infoLocal, .infoVisitante{
+    display: inline-block;
+    font-weight: bold;
+}
+
+.infoError{
+    overflow-wrap: auto;
 }
 
 .resetear{
@@ -89,12 +98,17 @@ body{
     display: flex;
 }
 
-.container1{
-    margin-right: 70px; 
+.golesLocal, .golesVisitante{
+    font-weight: bold;
+    font-size: 40px;
 }
 
 .containerClubes{
     display: flex;
     justify-content: space-around;
     gap: 20px;
+}
+
+.oculto{
+    display: none;
 }

@@ -1,14 +1,25 @@
-const errorLocal = document.querySelector('#error-local')
-
 const $botonJugar = document.querySelector('#boton-jugar-partido')
 const $botonResetear = document.querySelector('#resetear')
 
 const localDiv = document.querySelector('#equipo-1')
 const visitanteDiv = document.querySelector('#equipo-2')
 
+const infoLocal = document.querySelector('.infoLocal')
+const infoVisitante = document.querySelector('.infoVisitante');
+const infoError = document.querySelector('.infoError');
+
 function mostrarError(){
-    $formEquipo1.equipo.className = 'error'    
-    errorLocal.textContent = '¡Tenés que elegir un equipo!'
+
+    if(infoLocal.textContent === '' || infoVisitante.textContent === ''){
+        $botonJugar.classList.add('error');
+        infoError.textContent = 'Tenés que elegir dos equipos para jugar el partido'
+    }
+}
+
+function revertirError(){
+    const infoError = document.querySelector('.infoError');
+    infoError.textContent = '';
+    $botonJugar.classList.remove('error');
 }
 
 function asignarClaseNivel(equipo){
@@ -28,17 +39,65 @@ function asignarClaseNivel(equipo){
     equipo.classList.add('equipo');
 }
 
-$botonJugar.onclick = function(){
-
+function mostrarInfoLocal(equipo){
+    infoLocal.textContent = equipo;
 }
 
-function manejarClick(cuadro){
+function mostrarInfoVisitante(equipo){
+    infoVisitante.textContent = equipo;
+}
+
+function darEstilo(elemento){
+    elemento.style.backgroundColor = "rgb(120, 8, 224)";
+    elemento.style.color = "rgb(196, 196, 196)";
+}
+
+function resetearEstilosLocales(){
+    const campoLocales = document.querySelector('.container1');
+    const listaLocales = campoLocales.querySelectorAll('.equipo');
+    listaLocales.forEach(function(elemento){
+        elemento.style.backgroundColor = 'transparent';
+        elemento.style.color = 'black'
+    })
+}
+
+function resetearEstilosVisitantes(){
+    const campoVisitantes = document.querySelector('.container2');
+    const listaVisitantes = campoVisitantes.querySelectorAll('.equipo');
+    listaVisitantes.forEach(function(elemento){
+        elemento.style.backgroundColor = 'transparent';
+        elemento.style.color = 'black'
+    })
+}
+
+function elegirEquipoLocal(div, cuadro){
+    let equipoElegido = '';
+    
     cuadro.onclick = function(event){
+        revertirError();
+        resetearEstilosLocales();
+        
         const elemento = event.target;
-        console.log(elemento.innerText); //CUANDO HAGO CLIC EN UN EQUIPO, HACE UN CONSOLE.LOG DE SU NOMBRE
-        //ACÁ TENGO QUE HACER LA INFO DEL CLUB ELEGIDO
-        //FALTA RELACIONARLO CON EL SIMULADOR
+        darEstilo(elemento)
+        mostrarInfoLocal(elemento.innerText);
+        equipoElegido = elemento.innerText;
     }
+    return equipoElegido;
+}
+
+function elegirEquipoVisitante(div, cuadro){
+    let equipoElegido = '';
+
+    cuadro.onclick = function(event){
+        revertirError();
+        resetearEstilosVisitantes();
+
+        const elemento = event.target;
+        darEstilo(elemento);
+        mostrarInfoVisitante(elemento.innerText);
+        equipoElegido = elemento.innerText;
+    }
+    return equipoElegido;
 }
 
 function crearCuadros(){
@@ -49,14 +108,15 @@ function crearCuadros(){
         const cuadro = document.createElement('button');
         cuadro.innerText = elemento;
         asignarClaseNivel(cuadro)
-        manejarClick(cuadro);
+        elegirEquipoLocal(localDiv, cuadro);
         localDiv.appendChild(cuadro);
     })
+
     llaves.forEach(function(elemento){
         const cuadro = document.createElement('button');
         cuadro.innerText = elemento;
         asignarClaseNivel(cuadro);
-        manejarClick(cuadro);
+        elegirEquipoVisitante(visitanteDiv, cuadro);
         visitanteDiv.appendChild(cuadro);
     })
     
@@ -64,29 +124,23 @@ function crearCuadros(){
 
 crearCuadros();
 
-//✔ 1 Cambiar nombre de crearListaDeEquipos() a crearListaDeEquipos()
-//2 Hacer un forEach para crear los cuadros con los clubes. Tienen que ser todos un button con su clase asignada
-//  en el nivel y id nombredelclub. No olvidar que se hace con los .value 
-//✔ 3 Hacer objetos: Nombre del club = club.nombre, nivel = club.nivel, con los backticks
-//✔ 4 Crear objeto vacío para cada club que va a jugar :local.nombre = club.nombre, visitante.nombre = club.nombre
-//  También puedo hacerlo con una lista de keys. Se hace una lista y se elimina al local para elegir al visitante.
-//5 ✔Usar flex para ponerlos dentro de un cuadro y alinearlos.
-//6 Hacer que el club elegido se ponga en cierto color y un texto abajo. Y al hacer clic en otro, se borre el que ya está.
-//7 Hacer error que diga que el local no se pueda hacer sin elegir un club primero.
-//8 Hacer que las dimensiones de los divs donde están los equipos se ajusten a la cantidad de clubes
-//9 HACER RESPONSIVE
-
-/*$botonElegirVisitante.onclick = function(){
-    equipo2.equipo = $formEquipo2.equipo.value
-    equipoVisitante.textContent = 'Visitante: ' + equipo2.equipo
-    $botonJugar.className = 'jugar'
-    return false;
-}*/
+/*
+TODO: 
+1- ✓ Hacer que tenga un focus de cada lado
+2- ✓ Alinear los campos de info para que queden uno junto al otro. Intentar reducir los márgenes a los costados
+3- Hacer otra fila más abajo para los goles. Que cuando se simule el partido, haya que reiniciar.
+4- Ver si puedo eliminar el botón elegido como local de la lista de visitantes.
+5- Codear bien los botones de jugar y resetear
+6- Empezar a codear el simulador.
+7- Ver si puedo hacer que el programa funcione poniendo el archivo de interfaz antes que el simu en el HTML
+8- Codear el archivo pruebas
+*/
 
 $botonJugar.onclick = function(){
+    mostrarError();
     jugar();
     $botonJugar.className = 'oculto';
-    $botonResetear.className = 'resetear';
+    $botonResetear.className = '';
     return false;
 }
 

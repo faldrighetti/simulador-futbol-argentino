@@ -18,23 +18,36 @@
                 <div class="col-5">
                     <div id="local">
                         <p>Elegí el equipo local</p>
-                        <div id="equipo-1" class="container1">            
-                            <div id="error-local"></div>
-                            <div id="info-local" class="info"></div>
+                        <div id="equipo-1" class="container1">
                         </div>
                     </div>
                 </div>
-                <div class="col-2" id="centro">
+                <div class="col-3" id="centro">
                     <div class="row align-items-end">
-                    <button id="boton-jugar-partido" class="oculto">Jugar!</button>
+                        <button id="boton-jugar-partido" class="">Jugar!</button>
+                        <div class="row align-items-start">
+                            <div class="infoError"></div>
+                            <div class="col">
+                                <div class="infoLocal"></div>
+                              </div>
+                              <div class="col">
+                                <div class="infoVisitante"></div>
+                              </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <div class="golesLocal">2</div>
+                              </div>
+                              <div class="col">
+                                <div class="golesVisitante">1</div>
+                              </div>
+                        </div>          
                     </div>
                 </div>
                 <div class="col-5">
                     <div id="visitante">
                         <p>Elegí el equipo visitante</p>
-                        <div id="equipo-2" class="container2">            
-                            <div id="error-visitante"></div>
-                            <div id="info-visitante" class="info"></div>
+                        <div id="equipo-2" class="container2">                       
                 </div>
             </main>
         </div>
@@ -47,5 +60,6 @@
     </footer>
     <script src='src/simulador.js'></script>
     <script src='src/interfaz.js'></script>
+    <script src="src/pruebas.js"></script>
 </body>
 </html>
