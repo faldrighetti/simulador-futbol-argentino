@@ -9,11 +9,13 @@ const infoVisitante = document.querySelector('.infoVisitante');
 const infoError = document.querySelector('.infoError');
 
 function mostrarError(){
-
+    let error = false;
     if(infoLocal.textContent === '' || infoVisitante.textContent === ''){
         $botonJugar.classList.add('error');
         infoError.textContent = 'Tenés que elegir dos equipos para jugar el partido'
+        error = true;
     }
+    return error;
 }
 
 function revertirError(){
@@ -119,20 +121,28 @@ function crearCuadros(){
         asignarClaseNivel(cuadro);
         elegirEquipoVisitante(visitanteDiv, cuadro);
         visitanteDiv.appendChild(cuadro);
-    })
-    
+    })    
 }
 
 crearCuadros();
 
 function escribirGoles(){
-    let golesLocal = 111111111 // Acá se llama a la función del simulador
-    let golesVisitante = 11111111 //Acá se llama a la función del simulador
-
+    //const cuadroLocal = document.getElementsByClassName('.container1').onclick;
+    //const cuadroVisitante =
+    //let equipo1 = elegirEquipoLocal(localDiv, cuadroLocal);
+    //let equipo2 = elegirEquipoVisitante(visitanteDiv, cuadro);
+    let golesLocal = 9
+    let golesVisitante = 9 //jugarPartido(equipo2);
+    
     const $golesLocal = document.querySelector('#golesLocal');
-    const $golesVisitante = document.querySelector('#golesVisitante');
     $golesLocal.textContent = golesLocal;
+
+    const $golesVisitante = document.querySelector('#golesVisitante');
     $golesVisitante.textContent = golesVisitante;
+
+    const guion = document.querySelector('#guion');
+    guion.textContent = '-';
+    
 }
 
 /*
@@ -148,14 +158,23 @@ TODO:
 */
 
 $botonJugar.onclick = function(){
-    const equipo1 = elegirEquipoLocal(localDiv, cuadro)
+    //const equipo1 = elegirEquipoLocal(localDiv, cuadro)
     mostrarError();
-    jugar(); //jugar(equipo1, equipo2)
+    //jugar(); //jugar(equipo1, equipo2)
+    escribirGoles()
     $botonJugar.className = 'oculto';
-    $botonResetear.className = '';
+    $botonResetear.classList.remove('oculto');
     return false;
 }
 
 $botonResetear.onclick = function(){
     window.location.reload()
+}
+
+function validarEquipos(){
+    let texto = '';
+    if(mostrarError()){
+        texto = 'Tiene que elegir dos equipos';
+    }
+    return texto;
 }

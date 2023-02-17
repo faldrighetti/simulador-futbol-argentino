@@ -18,10 +18,10 @@
                 <div class="col-5">
                     <div id="local">
                         <p>Elegí el equipo local</p>
-                        <div id="equipo-1" class="container1">
-                        </div>
+                        <div id="equipo-1" class="container1"></div>
                     </div>
                 </div>
+
                 <div class="col-3" id="centro">
                     <div class="row align-items-end">
                         <button id="boton-jugar-partido" class="">Jugar!</button>
@@ -39,28 +39,27 @@
                                 <div id="golesLocal" class="golesLocal"></div>
                               </div>
                               <div class="col">
-                                <div class="guion">-</div>
+                                <div id="guion" class="oculto">-</div>
                               </div>
                               <div class="col">
                                 <div id="golesVisitante" class="golesVisitante"></div>
                               </div>
+                              <div class="row align-items-start">
+                                <button id="resetear" class="oculto">Resetear</button>
+                              </div>
                         </div>          
                     </div>
                 </div>
+
                 <div class="col-5">
                     <div id="visitante">
                         <p>Elegí el equipo visitante</p>
-                        <div id="equipo-2" class="container2">                       
-                </div>
+                        <div id="equipo-2" class="container2"></div>
             </main>
         </div>
       </div>   
     </main>
 
-    <p id="resultado"></p>
-    <footer>
-        <button id="resetear" class="oculto">Resetear</button>
-    </footer>
     <script src='src/simulador.js'></script>
     <script src='src/interfaz.js'></script>
     <script src="src/pruebas.js"></script>

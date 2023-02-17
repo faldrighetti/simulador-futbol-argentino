@@ -58,10 +58,10 @@ function hacerGoles(equipo){
     console.log(equipos);
     let i = 0;
 
-    while(equipos[i] !== equipo){
+    /*while(equipos[i] !== asignarEquipos()[equipos[i].nombre] && i < equipos.length){
         i++;
     }
-
+    console.log(equipos[i]);*/
 
     let goles = 0;
 
@@ -76,18 +76,12 @@ function hacerGoles(equipo){
 }
 hacerGoles()
 
-function jugarPartido(){
-    //let goles = hacerGoles();
+function jugarPartido(equipo){
+    let $golesEquipo = 0;
 
-
-    //return goles;
+    return $golesEquipo1;
 }
 
-let goles1 = jugarPartido()
-let goles2 = jugarPartido()
-
-console.log(goles1)
-console.log(goles2)
 
 //Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
 //Función general obtenerGoles(equipo)

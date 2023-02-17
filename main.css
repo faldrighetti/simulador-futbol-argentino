@@ -98,7 +98,7 @@ body{
     display: flex;
 }
 
-.golesLocal, .golesVisitante, .guion{
+.golesLocal, .golesVisitante, #guion{
     font-weight: bold;
     font-size: 40px;
 }
