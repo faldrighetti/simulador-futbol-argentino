@@ -25,10 +25,6 @@ let nivelNormal = ['Argentinos Juniors', 'Arsenal', 'Atlético Tucumán', 'Banfi
 let nivelInferior = ['Aldosivi','Barracas Central', 'Central Córdoba', 'Patronato', 'Platense', 'Sarmiento', 'Tigre']
 let todosLosClubes = nivelPotencia.concat(nivelSuperior.concat(nivelNormal.concat(nivelInferior)));
 
-const clubes = {
-
-}
-
 function tirarDado(){
    return Math.floor(Math.random() * carasDelDado) + 1; // dado 1-6
 }
@@ -57,20 +53,41 @@ function asignarEquipos(){
 
 console.log(asignarEquipos()['River Plate'].nombre)
 
-function jugarPartido(){
-    let golesLocal = 0;
-    let golesVisitante = 0;
+function hacerGoles(equipo){
+    let equipos = Object.keys(asignarEquipos());
+    console.log(equipos);
+    let i = 0;
 
-    for(let i = 0; i < chancesDeGol.potencia; i++){
-        let chanceLocal = tirarDado();
-        if (chanceLocal === 1){
-            golesLocal++;
+    while(equipos[i] !== equipo){
+        i++;
+    }
+
+
+    let goles = 0;
+
+    for(let i = 0; i < chancesDeGol.nivel; i++){
+        let chance = tirarDado();
+        if (chance === 1){
+            goles++;
         }
     }
-    
 
-    return [golesLocal, golesVisitante]
+    return goles;
 }
+hacerGoles()
+
+function jugarPartido(){
+    //let goles = hacerGoles();
+
+
+    //return goles;
+}
+
+let goles1 = jugarPartido()
+let goles2 = jugarPartido()
+
+console.log(goles1)
+console.log(goles2)
 
 //Objeto chances = {potencia: 11, superior: 9, normal: 7, inferior: 5}
 //Función general obtenerGoles(equipo)
@@ -107,48 +124,6 @@ function obtenerGolesDelEquipo1(){
     for(let l = 0; l < nivelInferior.length; l++){
         if(nivelInferior[l] === $formEquipo1.equipo.value){
             equipo1.clase = 'inferior'
-            chancesDeGol = chancesDeGolInferior
-        }
-    }
-
-    for (let i = 0; i < chancesDeGol; i++){
-        let chance = tirarDado()
-        if (chance === 1){
-            totalGoles.push('gol') 
-        }
-    }
-
-    return totalGoles.length
-}
-
-function obtenerGolesDelEquipo2(){
-    
-    let totalGoles = []
-    
-    for(let i = 0; i < nivelPotencia.length; i++){
-        if (nivelPotencia[i] === $formEquipo2.equipo.value){
-           equipo2.clase = 'potencia'
-           chancesDeGol = chancesDeGolPotencia
-        }
-    }
-
-    for(let j = 0; j < nivelSuperior.length; j++){
-        if(nivelSuperior[j] === $formEquipo2.equipo.value){
-            equipo2.clase = 'superior'
-            chancesDeGol = chancesDeGolSuperior
-        }
-    }
-
-    for(let k = 0; k < nivelNormal.length; k++){
-        if(nivelNormal[k] === $formEquipo2.equipo.value){
-            equipo2.clase = 'normal'
-            chancesDeGol = chancesDeGolNormal
-        }
-    }
-
-    for(let l = 0; l < nivelInferior.length; l++){
-        if(nivelInferior[l] === $formEquipo2.equipo.value){
-            equipo2.clase = 'inferior'
             chancesDeGol = chancesDeGolInferior
         }
     }

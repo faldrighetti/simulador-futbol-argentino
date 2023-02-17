@@ -82,6 +82,7 @@ function elegirEquipoLocal(div, cuadro){
         mostrarInfoLocal(elemento.innerText);
         equipoElegido = elemento.innerText;
     }
+    console.log(equipoElegido)
     return equipoElegido;
 }
 
@@ -124,6 +125,16 @@ function crearCuadros(){
 
 crearCuadros();
 
+function escribirGoles(){
+    let golesLocal = 111111111 // Acá se llama a la función del simulador
+    let golesVisitante = 11111111 //Acá se llama a la función del simulador
+
+    const $golesLocal = document.querySelector('#golesLocal');
+    const $golesVisitante = document.querySelector('#golesVisitante');
+    $golesLocal.textContent = golesLocal;
+    $golesVisitante.textContent = golesVisitante;
+}
+
 /*
 TODO: 
 1- ✓ Hacer que tenga un focus de cada lado
@@ -137,8 +148,9 @@ TODO:
 */
 
 $botonJugar.onclick = function(){
+    const equipo1 = elegirEquipoLocal(localDiv, cuadro)
     mostrarError();
-    jugar();
+    jugar(); //jugar(equipo1, equipo2)
     $botonJugar.className = 'oculto';
     $botonResetear.className = '';
     return false;
