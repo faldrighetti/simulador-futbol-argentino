@@ -1,74 +1,67 @@
-const errorLocal = document.querySelector('#error-local')
-
 const $botonElegirLocal = document.querySelector('#boton-seleccionar-local')
-
 const $botonElegirVisitante = document.querySelector('#boton-seleccionar-visitante')
-
 const $botonJugar = document.querySelector('#boton-jugar-partido')
-
 const equipoLocal = document.querySelector('#equipo-local')
 const equipoVisitante = document.querySelector('#equipo-visitante')
-
 const infoVisitante = document.querySelector('#visitante')
-
 const $botonResetear = document.querySelector('#resetear')
-
 const todosLosClubes = document.querySelectorAll('option')
 const visitantes = document.querySelector('#lista-de-visitantes')
 
-function mostrarError(){
-    $formEquipo1.equipo.className = 'error'    
-    errorLocal.textContent = '¡Tenés que elegir un equipo!'
+function agregarLocales(){
+    const espacioLocales = document.querySelector('#locales');
+    clubes.forEach((equipo) => {
+        const botonClub = document.createElement('option');
+        if(nivelPotencia.includes(equipo)){
+            botonClub.classList.add('potencia');
+        }
+        else if(nivelSuperior.includes(equipo)){
+            botonClub.className = 'superior';
+        }
+        else if(nivelNormal.includes(equipo)){
+            botonClub.className = 'normal';
+        }
+        else if(nivelInferior.includes(equipo)){
+            botonClub.className = 'inferior';
+        }
+        botonClub.textContent = equipo;
+        espacioLocales.appendChild(botonClub);
+    })
 }
 
 $botonElegirLocal.onclick = function(){
-    equipo1.equipo = $formEquipo1.equipo.value
-    if (equipo1.equipo === ''){
-        mostrarError()
-    }
-    else{
-        errorLocal.textContent = ''
-        $formEquipo1.equipo.className = ''
-        infoVisitante.className = ''
-        equipoLocal.textContent = 'Local: ' + equipo1.equipo
-        crearVisitantes()
-    }
+    const localElegido = document.querySelector('#locales').value;
+    console.log(localElegido);
+ 
+    infoVisitante.className = ''
+    equipoLocal.textContent = 'Local: ' + equipo1.equipo
+    crearVisitantes()
     
     return false;
 }
 
-function crearVisitantes(){
-    for (let i = 0; i < todosLosClubes.length; i++){
-        if (todosLosClubes[i].value !== equipo1.equipo && todosLosClubes[i].value !== ''){
-            let nuevaOpcion = document.createElement('option') //no tiene clase, se tiene que asignar
-            nuevaOpcion.appendChild(todosLosClubes[i])
-            visitantes.appendChild(nuevaOpcion);
-
-            for (let j = 0; j < nivelPotencia.length; j++){
-                if (nivelPotencia[j] === todosLosClubes[i].value){
-                    nuevaOpcion.className = 'potencia'
-                }   
+export function crearVisitantes(){
+    const localElegido = document.querySelector('#locales').value;
+    const espacioVisitantes = document.querySelector('#visitantes');
+    clubes.forEach((equipo) => {
+        if(equipo.textContent !== localElegido){
+            const botonClub = document.createElement('option');
+            if(nivelPotencia.includes(equipo)){
+                botonClub.classList.add('potencia');
             }
-
-            for(let k = 0; k < nivelSuperior.length; k++){
-                if(nivelSuperior[k] === todosLosClubes[i].value){
-                    nuevaOpcion.className = 'superior'
-                }
+            else if(nivelSuperior.includes(equipo)){
+                botonClub.className = 'superior';
             }
-
-            for(let l = 0; l < nivelNormal.length; l++){
-                if(nivelNormal[l] === todosLosClubes[i].value){
-                    nuevaOpcion.className = 'normal'
-                }
+            else if(nivelNormal.includes(equipo)){
+                botonClub.className = 'normal';
             }
-
-            for(let m = 0; m < nivelInferior.length; m++){
-                if(nivelInferior[m] === todosLosClubes[i].value){
-                    nuevaOpcion.className = 'inferior'
-                }
+            else if(nivelInferior.includes(equipo)){
+                botonClub.className = 'inferior';
             }
+            botonClub.textContent = equipo;
+            espacioVisitantes.appendChild(botonClub);
         }
-    }   
+    })
 }
 
 $botonElegirVisitante.onclick = function(){

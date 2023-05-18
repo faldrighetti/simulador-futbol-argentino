@@ -13,52 +13,20 @@
     <div id="local">
         <form id="equipo-1">
             <p>Elegí el equipo local </p>
-                <select name="equipo">
-                    <option value="">Selecciona...</option>
-                    <option value="River Plate" class="potencia">River Plate</option>
-                    <option value="Boca Juniors" class="potencia">Boca Juniors</option>
-                    <option value="Independiente" class="superior">Independiente</option>
-                    <option value="Racing" class="superior">Racing</option>
-                    <option value="San Lorenzo" class="superior">San Lorenzo</option>
-                    <option value="Colón" class="superior">Colón</option>
-                    <option value="Defensa y Justicia" class="superior">Defensa y Justicia</option>
-                    <option value="Estudiantes LP" class="superior">Estudiantes LP</option>
-                    <option value="Lanús" class="superior">Lanús</option>
-                    <option value="Talleres" class="superior">Talleres</option>
-                    <option value="Vélez" class="superior">Vélez</option>
-                    <option value="Argentinos Juniors" class="normal">Argentinos Juniors</option>
-                    <option value="Arsenal" class="normal">Arsenal</option>
-                    <option value="Atlético Tucumán" class="normal">Atlético Tucumán</option>
-                    <option value="Banfield" class="normal">Banfield</option>
-                    <option value="Gimnasia LP" class="normal">Gimnasia LP</option>
-                    <option value="Godoy Cruz" class="normal">Godoy Cruz</option>
-                    <option value="Huracán" class="normal">Huracán</option>
-                    <option value="Newell's" class="normal">Newell's</option>
-                    <option value="Rosario Central" class="normal">Rosario Central</option>
-                    <option value="Unión" class="normal">Unión</option>
-                    <option value="Aldosivi" class="inferior">Aldosivi</option>
-                    <option value="Barracas Central" class="inferior">Barracas Central</option>
-                    <option value="Central Córdoba" class="inferior">Central Córdoba</option>
-                    <option value="Patronato" class="inferior">Patronato</option>
-                    <option value="Platense" class="inferior">Platense</option>
-                    <option value="Sarmiento" class="inferior">Sarmiento</option>
-                    <option value="Tigre" class="inferior">Tigre</option>
+                <select id="locales">
                 </select>
                 <br>
                 <br>
             <button id="boton-seleccionar-local">Elegir equipo local</button>
             </p>
-            <div id="error-local"></div>
             <div id="equipo-local" class="info"></div>
         </form>
     </div>
-
         <div id="visitante" class="oculto">
             <form id="equipo-2">
             <p>Elegí el equipo visitante </p>
                 <select name="equipo" id='lista-de-visitantes'>
-                </select>
-                
+                </select>     
             </p>
             <button id="boton-seleccionar-visitante">Elegir equipo visitante</button>
             <br>
@@ -76,7 +44,8 @@
     <footer>
         <button id="resetear" class="oculto">Resetear</button>
     </footer>
-    <script src='simulador.js'></script>
-    <script src='interfaz.js'></script>
+    <!--<script src='simulador.js'></script>
+    <script src='interfaz.js'></script>-->
+    <script src="./index.js" type="module"></script>
 </body>
 </html>
