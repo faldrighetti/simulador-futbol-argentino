@@ -1,11 +1,7 @@
-import {hola} from './simulador.js';
+import {cargarEquipos} from './interfaz.js'
 
-/*function iniciar(){
-    agregarLocales();
-}*/
+function iniciar(){
+    cargarEquipos();
+}
 
-//iniciar();
-
-hola();
-
-console.log("Hola mundo");
+iniciar();

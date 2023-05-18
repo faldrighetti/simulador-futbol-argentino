@@ -11,28 +11,25 @@
     <h2>Simulador de resultados del fútbol argentino</h2>
 
     <div id="local">
-        <form id="equipo-1">
-            <p>Elegí el equipo local </p>
-                <select id="locales">
-                </select>
-                <br>
-                <br>
-            <button id="boton-seleccionar-local">Elegir equipo local</button>
-            </p>
-            <div id="equipo-local" class="info"></div>
-        </form>
+        <p>Elegí el equipo local </p>
+            <select id="locales">
+            </select>
+            <br>
+            <br>
+        <button id="boton-seleccionar-local">Elegir equipo local</button>
+        </p>
+        <div id="equipo-local" class="info"></div>
     </div>
-        <div id="visitante" class="oculto">
-            <form id="equipo-2">
-            <p>Elegí el equipo visitante </p>
-                <select name="equipo" id='lista-de-visitantes'>
-                </select>     
-            </p>
-            <button id="boton-seleccionar-visitante">Elegir equipo visitante</button>
-            <br>
-            <br>
-        </form>
-        </div>
+    
+    <div id="visitante" class="oculto">
+        <p>Elegí el equipo visitante </p>
+            <select id='visitantes'>
+            </select>     
+        </p>
+        <button id="boton-seleccionar-visitante">Elegir equipo visitante</button>
+        <br>
+        <br>
+    </div>
        
         <div id="equipo-visitante" class="info"></div>
 
@@ -44,8 +41,7 @@
     <footer>
         <button id="resetear" class="oculto">Resetear</button>
     </footer>
-    <!--<script src='simulador.js'></script>
-    <script src='interfaz.js'></script>-->
+
     <script src="./index.js" type="module"></script>
 </body>
 </html>
